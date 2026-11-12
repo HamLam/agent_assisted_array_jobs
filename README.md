@@ -1,5 +1,7 @@
 # Agent-assisted Slurm array job management
 
+![Agent-assisted Slurm array job workflow](Agent_Array_workflow.png)
+
 This project explores how an agent can manage many independent file-processing jobs through Slurm arrays. A user supplies the input location, output location, and intended program or analysis. The agent turns that request into a reproducible run: prepare inputs, select resources, submit arrays, check results, recover eligible failures, and report the outcome.
 
 The agent manages the workflow through ordinary Slurm commands. Slurm schedules and executes the jobs; the program performs the analysis. Completion requires both successful execution and program-specific output validation.
