@@ -1,0 +1,4 @@
+test-20261112T221451Z/manifest.json: OK
+test-20261112T221451Z/uppercase.py: OK
+test-20261112T221451Z/worker.py: OK
+test-20261112T221451Z/array.sbatch: OK

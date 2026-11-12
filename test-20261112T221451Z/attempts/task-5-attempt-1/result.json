@@ -1,0 +1,36 @@
+{
+  "task": 5,
+  "name": "broken-compass.txt",
+  "attempt": 1,
+  "job_id": "7019192",
+  "array_job_id": "7019159",
+  "host": "acn01",
+  "started": "2026-11-12T22:18:21.702210Z",
+  "resources": {
+    "cpus": 1,
+    "memory_mib": 256,
+    "time_seconds": 300,
+    "gpus": 0
+  },
+  "status": "needs attention",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/attempts/task-5-attempt-1/time.txt",
+    "/usr/bin/python3",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/uppercase.py",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/inputs/broken-compass.txt",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/attempts/task-5-attempt-1/broken-compass.txt",
+    "--mode",
+    "fail_once",
+    "--attempt",
+    "1"
+  ],
+  "program_exit": 23,
+  "attempt_exact_match": false,
+  "expected_bytes": 57,
+  "actual_bytes": 7,
+  "reason": "program exited 23 after deliberate partial output",
+  "ended": "2026-11-12T22:18:21.805081Z"
+}

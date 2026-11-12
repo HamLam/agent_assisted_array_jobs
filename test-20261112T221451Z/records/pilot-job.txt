@@ -1,0 +1,84 @@
+JobId=7019159 ArrayJobId=7019159 ArrayTaskId=6 ArrayTaskThrottle=2 JobName=upper-pilot-221451
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=126696 Nice=0 Account=support QOS=normal
+   JobState=PENDING Reason=Priority Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-12T16:16:25 EligibleTime=2026-11-12T16:16:28
+   AccrueTime=2026-11-12T16:17:16
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T16:17:23 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:625342
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch
+   SubmitLine=sbatch --parsable --array=1,5,6%2 --job-name=upper-pilot-221451 --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-%A_%a.err /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-7019159_6.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-7019159_6.out
+   TresPerTask=cpu=1
+
+JobId=7019192 ArrayJobId=7019159 ArrayTaskId=5 ArrayTaskThrottle=2 JobName=upper-pilot-221451
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=126696 Nice=0 Account=support QOS=normal
+   JobState=PENDING Reason=Priority Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-12T16:16:25 EligibleTime=2026-11-12T16:16:28
+   AccrueTime=2026-11-12T16:17:16
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T16:17:23 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:625342
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch
+   SubmitLine=sbatch --parsable --array=1,5,6%2 --job-name=upper-pilot-221451 --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-%A_%a.err /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-7019159_5.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-7019159_5.out
+   TresPerTask=cpu=1
+
+JobId=7019191 ArrayJobId=7019159 ArrayTaskId=1 ArrayTaskThrottle=2 JobName=upper-pilot-221451
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=126696 Nice=0 Account=support QOS=normal
+   JobState=PENDING Reason=Priority Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-12T16:16:25 EligibleTime=2026-11-12T16:16:28
+   AccrueTime=2026-11-12T16:17:16
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T16:17:23 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:625342
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch
+   SubmitLine=sbatch --parsable --array=1,5,6%2 --job-name=upper-pilot-221451 --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-%A_%a.err /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-7019159_1.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/pilot-7019159_1.out
+   TresPerTask=cpu=1
+

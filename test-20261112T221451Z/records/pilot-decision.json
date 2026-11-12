@@ -1,0 +1,12 @@
+{
+  "validated_successes": ["cedar.txt"],
+  "observed_program_maxrss_kib": [11484, 11392, 11432],
+  "observed_program_wall_seconds": [0.06, 0.05, 0.05],
+  "decision": "Retain 1 CPU, 256 MiB, 5 minutes; tiny serial text workload is homogeneous, all pilot measurements fit comfortably. Preserve cedar.txt as completed work.",
+  "retry_reasons": {
+    "broken-compass.txt": "Program deliberately exited 23 after writing only 7 of 57 expected bytes on attempt 1; restart in fresh attempt directory.",
+    "short-lantern.txt": "Program exited 0 and printed completion, but exact byte validation rejected 7 of 63 expected bytes; wrapper exited 86; restart in fresh attempt directory."
+  },
+  "retry_eligibility": "Both previous attempts are stopped and accounted FAILED; only one retry authorized each.",
+  "scheduler_observation": "CompleteWait=150 seconds; arrays may remain waiting between slots."
+}

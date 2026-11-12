@@ -1,0 +1,1 @@
+SUCCESS: /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/inputs/short-lantern.txt -> /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/outputs/short-lantern.txt; exact byte comparison passed

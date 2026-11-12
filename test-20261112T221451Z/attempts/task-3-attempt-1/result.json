@@ -1,0 +1,38 @@
+{
+  "task": 3,
+  "name": "quartz-note.txt",
+  "attempt": 1,
+  "job_id": "7019611",
+  "array_job_id": "7019492",
+  "host": "acn01",
+  "started": "2026-11-12T22:23:47.799448Z",
+  "resources": {
+    "cpus": 1,
+    "memory_mib": 256,
+    "time_seconds": 300,
+    "gpus": 0
+  },
+  "status": "successful",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/attempts/task-3-attempt-1/time.txt",
+    "/usr/bin/python3",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/uppercase.py",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/inputs/quartz-note.txt",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/attempts/task-3-attempt-1/quartz-note.txt",
+    "--mode",
+    "normal",
+    "--attempt",
+    "1"
+  ],
+  "program_exit": 0,
+  "attempt_exact_match": true,
+  "expected_bytes": 21,
+  "actual_bytes": 21,
+  "final_exact_match": true,
+  "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/outputs/quartz-note.txt",
+  "output_sha256": "f2bd2a9f381e4cf20f416a19325ff7e69ef847102d08bcccf1d77acdbc1994a2",
+  "ended": "2026-11-12T22:23:47.970854Z"
+}

@@ -1,0 +1,28 @@
+{
+  "cluster": "agate",
+  "access": "local Slurm CLI from cn1002",
+  "account": "support",
+  "partition": "msismall",
+  "qos": "normal",
+  "partition_qos": "common_agate",
+  "preemption": "OFF",
+  "environment": "/usr/bin/python3 3.6.8; /usr/bin/tr; /usr/bin/time; LC_ALL=C",
+  "limits": {
+    "cpus": 1,
+    "memory_mib": 1024,
+    "time_seconds": 300,
+    "concurrent": 2,
+    "retries_per_input": 1,
+    "gpus": 0
+  },
+  "chosen": {
+    "cpus": 1,
+    "memory_mib": 256,
+    "time_seconds": 300
+  },
+  "account_max_jobs": 5000,
+  "account_max_submit": 5000,
+  "documentation_job_limit": 2000,
+  "max_array_size": 100001,
+  "documentation": "https://userdocs.msi.umn.edu/compute/slurm_job_submission.html"
+}

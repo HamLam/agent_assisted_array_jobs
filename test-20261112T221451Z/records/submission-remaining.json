@@ -1,0 +1,21 @@
+{
+  "label": "remaining",
+  "array": "2,3,4%2",
+  "attempt": 1,
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--array=2,3,4%2",
+    "--job-name=upper-remaining-221451",
+    "--output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-%A_%a.out",
+    "--error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-%A_%a.err",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch",
+    "1"
+  ],
+  "time": "2026-11-12T22:21:53.786798Z",
+  "status": "submitted",
+  "returncode": 0,
+  "stdout": "7019492\n",
+  "stderr": "",
+  "job_id": "7019492"
+}

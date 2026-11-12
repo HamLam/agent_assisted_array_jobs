@@ -1,0 +1,56 @@
+JobId=7020092 ArrayJobId=7020092 ArrayTaskId=6 ArrayTaskThrottle=2 JobName=upper-retry-221451
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=126696 Nice=0 Account=support QOS=normal
+   JobState=PENDING Reason=Priority Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-12T16:27:20 EligibleTime=2026-11-12T16:27:23
+   AccrueTime=2026-11-12T16:27:36
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T16:28:31 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:630016
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch
+   SubmitLine=sbatch --parsable --array=5,6%2 --job-name=upper-retry-221451 --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-%A_%a.err /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch 2
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-7020092_6.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-7020092_6.out
+   TresPerTask=cpu=1
+
+JobId=7020108 ArrayJobId=7020092 ArrayTaskId=5 ArrayTaskThrottle=2 JobName=upper-retry-221451
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=126696 Nice=0 Account=support QOS=normal
+   JobState=PENDING Reason=Priority Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-12T16:27:20 EligibleTime=2026-11-12T16:27:23
+   AccrueTime=2026-11-12T16:27:36
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T16:28:31 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:630016
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch
+   SubmitLine=sbatch --parsable --array=5,6%2 --job-name=upper-retry-221451 --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-%A_%a.err /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch 2
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-7020092_5.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-7020092_5.out
+   TresPerTask=cpu=1
+

@@ -1,0 +1,86 @@
+JobId=7019492 ArrayJobId=7019492 ArrayTaskId=4 ArrayTaskThrottle=2 JobName=upper-remaining-221451
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=126696 Nice=0 Account=support QOS=normal
+   JobState=PENDING Reason=JobArrayTaskLimit Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-12T16:21:54 EligibleTime=2026-11-12T16:23:52
+   AccrueTime=2026-11-12T16:22:10
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T16:24:06 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:627440
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   NumNodes=1-1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch
+   SubmitLine=sbatch --parsable --array=2,3,4%2 --job-name=upper-remaining-221451 --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-%A_%a.err /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-7019492_4.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-7019492_4.out
+   TresPerTask=cpu=1
+
+JobId=7019611 ArrayJobId=7019492 ArrayTaskId=3 ArrayTaskThrottle=2 JobName=upper-remaining-221451
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=126696 Nice=0 Account=support QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:05 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-12T16:21:54 EligibleTime=2026-11-12T16:21:58
+   AccrueTime=2026-11-12T16:22:10
+   StartTime=2026-11-12T16:23:44 EndTime=2026-11-12T16:23:49 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T16:23:44 Scheduler=Backfill
+   Partition=msismall AllocNode:Sid=cn1002:627440
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch
+   SubmitLine=sbatch --parsable --array=2,3,4%2 --job-name=upper-remaining-221451 --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-%A_%a.err /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-7019492_3.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-7019492_3.out
+   TresPerTask=cpu=1
+
+JobId=7019610 ArrayJobId=7019492 ArrayTaskId=2 ArrayTaskThrottle=2 JobName=upper-remaining-221451
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=126696 Nice=0 Account=support QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:05 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-12T16:21:54 EligibleTime=2026-11-12T16:21:58
+   AccrueTime=2026-11-12T16:22:10
+   StartTime=2026-11-12T16:23:44 EndTime=2026-11-12T16:23:49 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-12T16:23:44 Scheduler=Backfill
+   Partition=msismall AllocNode:Sid=cn1002:627440
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch
+   SubmitLine=sbatch --parsable --array=2,3,4%2 --job-name=upper-remaining-221451 --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-%A_%a.err /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-7019492_2.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/remaining-7019492_2.out
+   TresPerTask=cpu=1
+

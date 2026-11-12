@@ -1,0 +1,8 @@
+{
+  "program": "uppercase.py",
+  "command": "/usr/bin/python3 uppercase.py INPUT ATTEMPT_OUTPUT --mode MODE --attempt ATTEMPT",
+  "parallelism": "one serial process; no GPUs or modules",
+  "validation": "LC_ALL=C /usr/bin/tr a-z A-Z independently calculates expected ASCII bytes; require program exit 0 and exact byte equality before and after publication",
+  "recovery": "fresh output for attempt 2; no append or checkpoint; deliberate first-attempt failures remain in program",
+  "resource_decision": "256 MiB and five minutes for tiny text; pilot tasks 1,5,6 cover normal and deliberate failures; retain validated pilot result"
+}

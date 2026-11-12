@@ -1,0 +1,21 @@
+{
+  "label": "retry",
+  "array": "5,6%2",
+  "attempt": 2,
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--array=5,6%2",
+    "--job-name=upper-retry-221451",
+    "--output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-%A_%a.out",
+    "--error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/logs/retry-%A_%a.err",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/array.sbatch",
+    "2"
+  ],
+  "time": "2026-11-12T22:27:20.875090Z",
+  "status": "submitted",
+  "returncode": 0,
+  "stdout": "7020092\n",
+  "stderr": "",
+  "job_id": "7020092"
+}

@@ -1,0 +1,15 @@
+PartitionName=msismall
+   AllowGroups=ALL AllowAccounts=ALL AllowQos=ALL
+   AllocNodes=ALL Default=YES QoS=common_agate
+   DefaultTime=00:01:00 DisableRootJobs=NO Exclusive=NO GraceTime=0 Hidden=NO
+   MaxNodes=1 MaxTime=4-00:00:00 MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED MaxCPUsPerSocket=UNLIMITED
+   NodeSets=agate_common,cray_384,cray_768,mangi_256g,mangi_512g
+   Nodes=acn[01-09,11-12,14,16-26,29-30,32,34-37,39-40,45-55,57-68,70,72-78,81-83,86-87,89-96,99-108,110-111,113-118,121-125,127-133,135,137-143,145-149,151,153,155-162,165-168,172-176,179-182,184-186,192-202,204-205,207,209,211-216,218-225,227-230,233-236],cn[1008-1034,1036-1086,1120-1128,1130-1139,1141-1149,1151-1159],n[1-64]
+   PriorityJobFactor=1 PriorityTier=20 RootOnly=NO ReqResv=NO OverSubscribe=NO
+   OverTimeLimit=NONE PreemptMode=OFF
+   State=UP TotalCPUs=46208 TotalNodes=361 SelectTypeParameters=NONE
+   JobDefaults=(null)
+   DefMemPerCPU=3900 MaxMemPerNode=UNLIMITED
+   TRES=cpu=46208,mem=169850000M,node=361,billing=90,gres/tmpdisk=260106000
+   TRESBillingWeights=CPU=0.001367,Mem=0.000167G,GRES/gpu:a40=0.176421,GRES/gpu:a100=0.311910,GRES/gpu:l40s=0.23193,GRES/gpu:h100=0.81205
+

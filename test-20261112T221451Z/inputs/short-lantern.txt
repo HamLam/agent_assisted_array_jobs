@@ -1,0 +1,2 @@
+a zero exit code is insufficient
+This second line is required.

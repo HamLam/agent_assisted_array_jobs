@@ -1,0 +1,36 @@
+{
+  "task": 6,
+  "name": "short-lantern.txt",
+  "attempt": 1,
+  "job_id": "7019159",
+  "array_job_id": "7019159",
+  "host": "acn01",
+  "started": "2026-11-12T22:20:57.249635Z",
+  "resources": {
+    "cpus": 1,
+    "memory_mib": 256,
+    "time_seconds": 300,
+    "gpus": 0
+  },
+  "status": "needs attention",
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/attempts/task-6-attempt-1/time.txt",
+    "/usr/bin/python3",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/uppercase.py",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/inputs/short-lantern.txt",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z/attempts/task-6-attempt-1/short-lantern.txt",
+    "--mode",
+    "incomplete_once",
+    "--attempt",
+    "1"
+  ],
+  "program_exit": 0,
+  "attempt_exact_match": false,
+  "expected_bytes": 63,
+  "actual_bytes": 7,
+  "reason": "program exit 0 but exact byte comparison rejected incomplete output",
+  "ended": "2026-11-12T22:20:57.374259Z"
+}
