@@ -1,61 +1,39 @@
 # Agent-assisted Slurm array job management
 
-This repository preserves a completed end-to-end test of an agent preparing, submitting, monitoring, validating, and recovering Slurm array jobs on the Minnesota Supercomputing Institute (MSI) cluster.
+This project explores how an agent can manage many independent file-processing jobs through Slurm arrays. A user supplies the input location, output location, and intended program or analysis. The agent turns that request into a reproducible run: prepare inputs, select resources, submit arrays, check results, recover eligible failures, and report the outcome.
 
-## Why use small text files?
+The agent manages the workflow through ordinary Slurm commands. Slurm schedules and executes the jobs; the program performs the analysis. Completion requires both successful execution and program-specific output validation.
 
-The goal is to test the agent's job-management decisions with a tiny workload whose correct answer can be calculated independently. Each input is processed by a serial program that writes its text in uppercase. Exact byte comparison against output from `LC_ALL=C tr a-z A-Z` provides a clear success criterion beyond file existence, a completion message, or a zero exit code.
+## Roles and responsibilities
 
-Six disposable inputs exercise ordinary processing, filenames containing spaces, preservation of filenames and newlines, a program that writes partial output and fails, and a program that exits successfully while producing incomplete output. This makes it possible to verify that the agent preserves successful results, detects both kinds of failure, waits for previous attempts to stop, and retries only unresolved inputs with fresh output. The deliberate failures remain in the archived program.
+- **Understand the requested work.** Establish how the program accepts one input and writes its outputs, which options and environment it requires, and what demonstrates a correct result. Ask focused questions when missing information prevents a reliable decision.
+- **Learn the cluster.** Verify access, submission accounts, partitions, software setup, and current limits using site documentation and scheduler information. Maintain reusable cluster and program profiles.
+- **Set operating limits.** Establish authorized ceilings for CPUs, memory, GPUs, runtime, simultaneous tasks, and retries. Proceed within those limits without repeatedly asking for confirmation.
+- **Prepare a reproducible run.** Check input readability and output writability, select the intended files, and create a dedicated run record. Freeze the task-to-input mapping, preserve filenames, assign distinct output destinations, and record enough input identity information to detect changes.
+- **Choose suitable resources.** Request resources the program can use. Estimate memory and runtime from comparable successful runs or representative pilots, inspect measured usage, and group substantially different workloads when useful. Count validated pilot outputs as completed work.
+- **Submit safely.** Generate scripts with explicit environment setup, resource requests, task selection, and separate logs and temporary outputs for each attempt. Record submission intent before submitting, save returned job IDs, reconcile uncertain submissions, and prevent overlapping attempts for the same input.
+- **Track progress.** Check current jobs and completed-job accounting. Distinguish waiting, running, verifying, successful, retrying, and needs-attention states. Investigate uncertain outcomes before deciding whether to retry.
+- **Validate and publish outputs.** Require a successful program exit and meaningful checks of the current attempt's outputs. Publish only validated results, verify publication, and record which input and outputs completed successfully.
+- **Recover selectively.** Diagnose stopped failures from scheduler data, program logs, and validation results. Preserve verified successes and retry only eligible unresolved inputs within the attempt limit. Adjust resources within authorized ceilings when evidence supports it; resolve invalid inputs, command errors, or missing software before retrying.
+- **Use demonstrated recovery methods.** Start retries with fresh output unless safe restart behavior has been established. Treat validated files or independent stages as recovery points; resuming a program's internal state requires actual checkpoint support.
+- **Preserve evidence and resume reliably.** Retain manifests, exact commands, environment details, scripts, resource decisions, submission records, job IDs, attempt logs, validation results, measurements, and retry reasons. Reconcile these records with Slurm and stored outputs before resuming.
+- **Report clearly.** Describe progress using filenames and plain language. At completion, state how many inputs succeeded, how many recovered after retry, and what remains unresolved. Identify unavailable resource measurements honestly.
 
-This test exercises the management workflow. Its small inputs do not establish resource requirements or restart behavior for a real scientific application.
+The user defines the intended analysis and authorizes the scope and operating limits. Actions outside those limits require further authorization. Progress checks occur while the agent is active or when invoked; unattended monitoring requires an explicitly configured mechanism to wake the agent.
 
-## Step-by-step summary
+## Typical workflow
 
-- Read `prompt.txt`, `AGENTS.md`, the Genesis Slurm skill, and MSI's Slurm documentation.
-- Verified access to cluster `agate`, the `support` account, the `msismall` partition, and applicable submission and resource limits.
-- Created a dedicated test directory containing six disposable text inputs, including `quiet river.txt`.
-- Froze the mapping between internal task numbers, original filenames, and final output destinations; recorded input sizes and SHA-256 hashes.
-- Created an uppercase program with four normal cases and two deliberate first-attempt failures: partial output followed by exit 23, and incomplete output followed by exit 0.
-- Created a Slurm worker that independently calculates expected uppercase output with `tr`, requires program exit 0 and exact byte equality, publishes validated output, and checks the published bytes again.
-- Generated the Slurm array script and saved cluster/program profiles, resource requests, submission intent, and separate attempt logs.
-- Submitted pilot array `7019159` for tasks 1, 5, and 6, with at most two simultaneous tasks, one CPU, 256 MiB memory, five minutes, and no GPUs per attempt.
-- Confirmed that `cedar.txt` passed and both deliberate failures were detected. The incomplete-output case returned program exit 0, but validation rejected it and the worker exited 86.
-- Reviewed pilot memory and runtime measurements and retained the resource request for the remaining small inputs.
-- Submitted array `7019492` for normal tasks 2, 3, and 4; all passed, including the input whose filename contains spaces.
-- Reconciled stopped attempts with Slurm accounting, recorded retry reasons, and preserved successful outputs and failed-attempt evidence.
-- Submitted retry array `7020092` for tasks 5 and 6 only, using fresh output locations and one retry per input.
-- Verified that both retries passed exact comparison, giving six successful final outputs, two inputs recovered after retry, and zero unresolved inputs.
-- Checked accounting to confirm a maximum of two simultaneous task allocations and verified that the frozen manifest, program, worker, and Slurm script were unchanged.
-- Preserved all run artifacts, including inputs, expected outputs, final outputs, partial failed outputs, logs, commands, job IDs, accounting, measurements, and the final evidence report.
+1. Inspect the program, inputs, cluster requirements, and authorized limits.
+2. Save the run configuration and frozen input manifest.
+3. Run representative pilots when resource evidence is insufficient.
+4. Validate pilot results and choose resource requests for the remaining work.
+5. Submit bounded arrays and track jobs through Slurm.
+6. Validate outputs and preserve successes.
+7. Diagnose stopped failures and retry eligible inputs within limits.
+8. Produce a final report with per-input outcomes and supporting evidence.
 
-## Results
+## Completed test
 
-| Input | First attempt | Retry | Final exact match |
-|---|---|---|---|
-| `cedar.txt` | Successful | Not needed | Pass |
-| `quiet river.txt` | Successful | Not needed | Pass |
-| `quartz-note.txt` | Successful | Not needed | Pass |
-| `violet.txt` | Successful | Not needed | Pass |
-| `broken-compass.txt` | Deliberate partial output; exit 23 | Successful | Pass |
-| `short-lantern.txt` | Program exit 0; incomplete output rejected | Successful | Pass |
+The [six-input text-file test](test-20261112T221451Z/README.md) demonstrates this workflow on MSI's `agate` cluster. It includes a filename containing spaces, a deliberate partial-output failure, and deliberately incomplete output from a program that exits successfully. All six final outputs passed exact comparison; two inputs recovered after one retry each.
 
-All eight processing attempts and their exact-output validation ran through Slurm. Each attempt requested one CPU, 256 MiB, and five minutes; arrays used a concurrency limit of two and submission waves did not overlap. Batch-step peak RSS was approximately 13 MiB. Array-task MaxRSS fields were blank; batch-step accounting and program-level GNU time measurements are retained instead.
-
-## Repository contents
-
-- [`test-20261112T221451Z/REPORT.md`](test-20261112T221451Z/REPORT.md): per-input results, retry reasons, array task IDs, resource requests, and final accounting evidence.
-- [`test-20261112T221451Z/manifest.json`](test-20261112T221451Z/manifest.json): frozen input identities and task mapping.
-- [`test-20261112T221451Z/uppercase.py`](test-20261112T221451Z/uppercase.py): the test program, including deliberate failures.
-- [`test-20261112T221451Z/worker.py`](test-20261112T221451Z/worker.py) and [`array.sbatch`](test-20261112T221451Z/array.sbatch): processing, validation, output publication, and Slurm resource configuration.
-- `test-20261112T221451Z/inputs/`, `expected/`, and `outputs/`: original inputs, independently calculated expectations, and validated final results.
-- `test-20261112T221451Z/attempts/`, `logs/`, and `records/`: all attempt evidence, scheduler logs, submission records, accounting, and integrity checks.
-- `test-20261112T221451Z/cluster-profile.json` and `program-profile.json`: saved environment, limits, validation rules, and recovery decisions.
-- `test-20261112T221451Z/submit.py`, `report.py`, and `evidence.py`: the submission and reporting helpers used during this test.
-
-The run directory is an archive of the actual cluster execution. Its scripts and records intentionally retain the original absolute paths, account, partition, timestamps, and job IDs. A new run needs its own directory and frozen manifest, along with paths and submission settings appropriate to that cluster.
-
-## References
-
-- [MSI Slurm job submission and scheduling](https://userdocs.msi.umn.edu/compute/slurm_job_submission.html)
-- Genesis skill used for this run: `genesis-skills/skills/hpc-skills/slurm/SKILL.md` in the local sibling checkout.
+The test folder contains its step-by-step summary, scripts, inputs, expected and final outputs, failed-attempt evidence, logs, resource profiles, and [final accounting report](test-20261112T221451Z/REPORT.md). These are archived artifacts from that run; applying the workflow to another program requires its own environment, validation rules, resource estimates, and recovery method.
