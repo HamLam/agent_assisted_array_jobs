@@ -8,31 +8,44 @@ The agent manages the workflow through ordinary Slurm commands. Slurm schedules 
 
 ## Roles and responsibilities
 
-- **Understand the requested work.** Establish how the program accepts one input and writes its outputs, which options and environment it requires, and what demonstrates a correct result. Ask focused questions when missing information prevents a reliable decision.
-- **Learn the cluster.** Verify access, submission accounts, partitions, software setup, and current limits using site documentation and scheduler information. Maintain reusable cluster and program profiles.
-- **Set operating limits.** Establish authorized ceilings for CPUs, memory, GPUs, runtime, simultaneous tasks, and retries. Proceed within those limits without repeatedly asking for confirmation.
-- **Prepare a reproducible run.** Check input readability and output writability, select the intended files, and create a dedicated run record. Freeze the task-to-input mapping, preserve filenames, assign distinct output destinations, and record enough input identity information to detect changes.
-- **Choose suitable resources.** Request resources the program can use. Estimate memory and runtime from comparable successful runs or representative pilots, inspect measured usage, and group substantially different workloads when useful. Count validated pilot outputs as completed work.
-- **Submit safely.** Generate scripts with explicit environment setup, resource requests, task selection, and separate logs and temporary outputs for each attempt. Record submission intent before submitting, save returned job IDs, reconcile uncertain submissions, and prevent overlapping attempts for the same input.
-- **Track progress.** Check current jobs and completed-job accounting. Distinguish waiting, running, verifying, successful, retrying, and needs-attention states. Investigate uncertain outcomes before deciding whether to retry.
-- **Validate and publish outputs.** Require a successful program exit and meaningful checks of the current attempt's outputs. Publish only validated results, verify publication, and record which input and outputs completed successfully.
-- **Recover selectively.** Diagnose stopped failures from scheduler data, program logs, and validation results. Preserve verified successes and retry only eligible unresolved inputs within the attempt limit. Adjust resources within authorized ceilings when evidence supports it; resolve invalid inputs, command errors, or missing software before retrying.
-- **Use demonstrated recovery methods.** Start retries with fresh output unless safe restart behavior has been established. Treat validated files or independent stages as recovery points; resuming a program's internal state requires actual checkpoint support.
-- **Preserve evidence and resume reliably.** Retain manifests, exact commands, environment details, scripts, resource decisions, submission records, job IDs, attempt logs, validation results, measurements, and retry reasons. Reconcile these records with Slurm and stored outputs before resuming.
-- **Report clearly.** Describe progress using filenames and plain language. At completion, state how many inputs succeeded, how many recovered after retry, and what remains unresolved. Identify unavailable resource measurements honestly.
+- **Understand the work.** Confirm inputs, outputs, program options, software needs, and success checks. Clarify missing details.
+- **Learn the cluster.** Check access, accounts, partitions, software, and limits. Save reusable cluster and program profiles.
+- **Set limits.** Agree on resource, concurrency, and retry ceilings; proceed within them without repeated approval.
+- **Prepare the run.** Check file access, freeze input identities and task mappings, preserve filenames, and assign separate outputs.
+- **Choose resources.** Use past results or measured pilots to size requests. Group different workloads and retain validated pilot results.
+- **Submit safely.** Save scripts, environment, requests, submission intent, job IDs, and separate attempt logs. Reconcile uncertain submissions; prevent overlaps.
+- **Track progress.** Check live jobs and accounting. Investigate uncertain outcomes before retrying.
+- **Validate outputs.** Require successful execution and program-specific checks. Publish, verify, and record only valid results.
+- **Recover selectively.** Diagnose stopped failures, fix their causes, and retry unresolved inputs within limits. Preserve successes.
+- **Restart safely.** Use fresh output unless safe recovery is proven. Internal-state recovery requires checkpoints.
+- **Keep records.** Save commands, environments, inputs, scripts, jobs, attempts, checks, measurements, and retry reasons. Reconcile records before resuming.
+- **Report clearly.** Use filenames and plain-language states. Count successes, recoveries, unresolved inputs, and missing measurements.
 
-The user defines the intended analysis and authorizes the scope and operating limits. Actions outside those limits require further authorization. Progress checks occur while the agent is active or when invoked; unattended monitoring requires an explicitly configured mechanism to wake the agent.
+The user chooses the analysis and authorizes its limits. Unattended monitoring needs an explicitly configured wake-up mechanism.
 
-## Typical workflow
+## How AGENTS.md guides a run
 
-1. Inspect the program, inputs, cluster requirements, and authorized limits.
-2. Save the run configuration and frozen input manifest.
-3. Run representative pilots when resource evidence is insufficient.
-4. Validate pilot results and choose resource requests for the remaining work.
-5. Submit bounded arrays and track jobs through Slurm.
-6. Validate outputs and preserve successes.
-7. Diagnose stopped failures and retry eligible inputs within limits.
-8. Produce a final report with per-input outcomes and supporting evidence.
+[`AGENTS.md`](AGENTS.md) gives the agent reusable rules for managing Slurm arrays:
+
+- Get the input location, output location, and intended program from the user.
+- Use the Genesis Slurm skill, MSI documentation, and current cluster information.
+- Save cluster and program profiles, including software, output checks, and proven recovery methods.
+- Establish resource, concurrency, and retry limits before submission.
+- Check file access; freeze the input list, identities, task numbers, and output destinations for all attempts.
+- Record the command, environment, checks, and resource requests; keep different runs separate.
+- Choose compatible resources using past runs or representative pilots. Check pilot outputs and measurements; keep valid results.
+- Respect submission and running limits. Prefer non-preemptible jobs when safe restart is unavailable.
+- Generate scripts with separate logs and fresh temporary outputs for each attempt.
+- Record submission intent, submit, and save job IDs. Check uncertain submissions before resubmitting; prevent overlapping attempts.
+- Check live jobs and accounting. Never retry waiting, running, completing, or uncertain attempts.
+- Require successful execution and output validation, then publish and verify final results before recording success.
+- Diagnose stopped failures; adjust resources within limits or fix input, command, and software problems before retrying.
+- Preserve successes and all logs. Retry only unresolved inputs, with fresh output unless safe recovery is proven.
+- Treat validated files or stages as recovery points; internal-state recovery still requires checkpoints.
+- Reconcile records with Slurm and outputs before resuming. Report progress, final counts, and unresolved work.
+- Check progress while active or when invoked; configure a wake-up mechanism for unattended checks.
+
+[`prompt.txt`](prompt.txt) defines the six-file test, deliberate failures, exact-output checks, and authorized test limits.
 
 ## Completed test
 
