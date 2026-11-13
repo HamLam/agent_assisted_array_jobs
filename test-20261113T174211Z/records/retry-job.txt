@@ -1,0 +1,58 @@
+JobId=7114518 ArrayJobId=7114518 ArrayTaskId=6 ArrayTaskThrottle=2 JobName=upper-20261113T174211Z-retry
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=127202 Nice=0 Account=support QOS=normal
+   JobState=CONFIGURING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-13T11:49:26 EligibleTime=2026-11-13T11:49:31
+   AccrueTime=2026-11-13T11:49:46
+   StartTime=2026-11-13T11:51:27 EndTime=2026-11-13T11:56:27 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T11:51:27 Scheduler=Backfill
+   Partition=msismall AllocNode:Sid=cn1002:1203435
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch
+   SubmitLine=sbatch --parsable --chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z --job-name=upper-20261113T174211Z-retry --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/retry-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/retry-%A_%a.err --array=5,6%2 /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch 2
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/retry-7114518_6.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/retry-7114518_6.out
+   TresPerTask=cpu=1
+
+JobId=7114603 ArrayJobId=7114518 ArrayTaskId=5 ArrayTaskThrottle=2 JobName=upper-20261113T174211Z-retry
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=127202 Nice=0 Account=support QOS=normal
+   JobState=RUNNING Reason=Prolog Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-13T11:49:26 EligibleTime=2026-11-13T11:49:31
+   AccrueTime=2026-11-13T11:49:46
+   StartTime=2026-11-13T11:51:27 EndTime=2026-11-13T11:56:28 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T11:51:27 Scheduler=Backfill
+   Partition=msismall AllocNode:Sid=cn1002:1203435
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch
+   SubmitLine=sbatch --parsable --chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z --job-name=upper-20261113T174211Z-retry --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/retry-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/retry-%A_%a.err --array=5,6%2 /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch 2
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/retry-7114518_5.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/retry-7114518_5.out
+   TresPerTask=cpu=1
+

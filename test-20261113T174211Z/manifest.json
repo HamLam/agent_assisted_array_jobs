@@ -1,0 +1,56 @@
+[
+  {
+    "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/cedar.txt",
+    "mode": "normal",
+    "name": "cedar.txt",
+    "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/cedar.txt",
+    "sha256": "aca9fc02032afe47a9fcb77fb920cbd2b20de8e3296faec51951b848abc26bce",
+    "size": 41,
+    "task": 1
+  },
+  {
+    "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/quiet river.txt",
+    "mode": "normal",
+    "name": "quiet river.txt",
+    "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/quiet river.txt",
+    "sha256": "bbe5999bc7b8476a1b78861729c567995a687057b1e7c0fb37743f34b2db20cb",
+    "size": 39,
+    "task": 2
+  },
+  {
+    "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/quartz-note.txt",
+    "mode": "normal",
+    "name": "quartz-note.txt",
+    "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/quartz-note.txt",
+    "sha256": "337c3e142fda714e4f6e83adbecc361ae46a6259a79e23047c08114a2b6fc798",
+    "size": 21,
+    "task": 3
+  },
+  {
+    "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/violet.txt",
+    "mode": "normal",
+    "name": "violet.txt",
+    "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/violet.txt",
+    "sha256": "724878b607e4c67fa54b8d589b34e8cff4e4879eb375b48297cb5acdf8611dfc",
+    "size": 33,
+    "task": 4
+  },
+  {
+    "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/broken-compass.txt",
+    "mode": "fail_once",
+    "name": "broken-compass.txt",
+    "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/broken-compass.txt",
+    "sha256": "7ec88f49e972f5e711eb7bd2678cd28646100c60897e7cb342163abd467a22a1",
+    "size": 57,
+    "task": 5
+  },
+  {
+    "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/short-lantern.txt",
+    "mode": "incomplete_once",
+    "name": "short-lantern.txt",
+    "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/short-lantern.txt",
+    "sha256": "25b7bb43c567f9b7e6f0425702991e32ad86e30a70f303a2447f2519fc5461f2",
+    "size": 63,
+    "task": 6
+  }
+]

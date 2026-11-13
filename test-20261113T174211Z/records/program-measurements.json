@@ -1,0 +1,58 @@
+[
+  {
+    "attempt": 1,
+    "program_maxrss_kib": 11452,
+    "program_wall": "0:00.05",
+    "source": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-1-attempt-1/time.txt",
+    "task": 1
+  },
+  {
+    "attempt": 1,
+    "program_maxrss_kib": 11564,
+    "program_wall": "0:00.07",
+    "source": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-2-attempt-1/time.txt",
+    "task": 2
+  },
+  {
+    "attempt": 1,
+    "program_maxrss_kib": 11568,
+    "program_wall": "0:00.05",
+    "source": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-3-attempt-1/time.txt",
+    "task": 3
+  },
+  {
+    "attempt": 1,
+    "program_maxrss_kib": 11448,
+    "program_wall": "0:00.18",
+    "source": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-4-attempt-1/time.txt",
+    "task": 4
+  },
+  {
+    "attempt": 1,
+    "program_maxrss_kib": 11564,
+    "program_wall": "0:00.04",
+    "source": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-5-attempt-1/time.txt",
+    "task": 5
+  },
+  {
+    "attempt": 2,
+    "program_maxrss_kib": 11608,
+    "program_wall": "0:00.06",
+    "source": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-5-attempt-2/time.txt",
+    "task": 5
+  },
+  {
+    "attempt": 1,
+    "program_maxrss_kib": 11456,
+    "program_wall": "0:00.06",
+    "source": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-6-attempt-1/time.txt",
+    "task": 6
+  },
+  {
+    "attempt": 2,
+    "program_maxrss_kib": 11568,
+    "program_wall": "0:00.06",
+    "source": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-6-attempt-2/time.txt",
+    "task": 6
+  }
+]

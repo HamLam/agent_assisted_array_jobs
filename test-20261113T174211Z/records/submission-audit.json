@@ -1,0 +1,30 @@
+{
+  "attempt": null,
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z",
+    "--job-name=upper-20261113T174211Z-audit",
+    "--output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/audit-%A_%a.out",
+    "--error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/audit-%A_%a.err",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch",
+    "audit"
+  ],
+  "created_at": "2026-11-13T17:52:26.542975Z",
+  "environment_override_policy": "SBATCH_* variables removed; script has explicit requests",
+  "job_id": "7115125",
+  "phase": "audit",
+  "resources": {
+    "cpus": 1,
+    "gpus": 0,
+    "memory_mib": 256,
+    "nodes": 1,
+    "time_seconds": 300
+  },
+  "returncode": 0,
+  "status": "submitted",
+  "stderr": "",
+  "stdout": "7115125\n",
+  "tasks": [],
+  "unique_job_name": "upper-20261113T174211Z-audit"
+}

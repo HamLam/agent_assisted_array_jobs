@@ -1,0 +1,8 @@
+{
+  "attempt": 2,
+  "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/short-lantern.txt",
+  "job_id": "7114518",
+  "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/short-lantern.txt",
+  "sha256": "4ce4eab9649eb3361cc59779aa2f3370700be9596ce61ac8f0c48af5b4420a3e",
+  "verified_at": "2026-11-13T17:51:29.457380Z"
+}

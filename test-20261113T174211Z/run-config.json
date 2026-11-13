@@ -1,0 +1,55 @@
+{
+  "authorized_ceilings": {
+    "cpus_per_attempt": 1,
+    "gpus": 0,
+    "max_retries_per_input": 1,
+    "max_running": 2,
+    "memory_mib_per_attempt": 1024,
+    "time_seconds_per_attempt": 300
+  },
+  "command_template": [
+    "/usr/bin/python3",
+    "scripts/uppercase.py",
+    "INPUT",
+    "ATTEMPT_OUTPUT",
+    "--mode",
+    "MODE",
+    "--attempt",
+    "ATTEMPT"
+  ],
+  "created_at": "2026-11-13T17:44:16.539927Z",
+  "environment": {
+    "LC_ALL": "C",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "input_selection": "Exact six disposable ASCII text inputs from frozen prior manifest; no directory glob selection",
+  "instructions": "records/AGENTS.md",
+  "manifest": "manifest.json",
+  "original_run": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261112T221451Z",
+  "plan": "First attempts 1-6%2, then only diagnosed stopped failures once; final Slurm audit after processing stops. No overlapping waves.",
+  "previous_instructions": "records/AGENTS.before.md",
+  "publishing": "Local preparation only; report to user before any GitHub push",
+  "record_paths": {
+    "attempts": "attempts",
+    "completion": "records/completion-checklist.json",
+    "final_audit": "records/final-audit.json",
+    "records": "records",
+    "report": "REPORT.md",
+    "scheduler_logs": "logs",
+    "scripts": "scripts"
+  },
+  "resource_rationale": "Comparable completed run test-20261112T221451Z used one CPU, 256 MiB and 5 minutes; batch peak RSS 12896-13048 KiB and elapsed 4-5 seconds. Retain the proven request; no additional pilot needed for identical program and inputs.",
+  "resources": {
+    "cpus": 1,
+    "gpus": 0,
+    "memory_mib": 256,
+    "nodes": 1,
+    "time_seconds": 300
+  },
+  "run_id": "test-20261113T174211Z",
+  "test_request": "prompt.txt",
+  "validation": "Independent LC_ALL=C /usr/bin/tr a-z A-Z; program exit 0 and exact entire byte equality before and after publication"
+}

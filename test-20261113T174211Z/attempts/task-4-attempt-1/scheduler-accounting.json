@@ -1,0 +1,47 @@
+{
+  "observed_at": "2026-11-13T17:55:42.769673Z",
+  "records": [
+    {
+      "allocated_tres": "cpu=1,mem=256M,node=1",
+      "cpus": "1",
+      "elapsed": "00:00:01",
+      "end": "2026-11-13T11:47:51",
+      "exit_code": "0:0",
+      "job": "7114385_4",
+      "max_rss": "unavailable",
+      "name": "upper-20261113T174211Z-initial",
+      "requested_memory": "256M",
+      "start": "2026-11-13T11:47:50",
+      "state": "COMPLETED",
+      "time_limit": "00:05:00"
+    },
+    {
+      "allocated_tres": "cpu=1,mem=256M,node=1",
+      "cpus": "1",
+      "elapsed": "00:00:01",
+      "end": "2026-11-13T11:47:51",
+      "exit_code": "0:0",
+      "job": "7114385_4.batch",
+      "max_rss": "13320K",
+      "name": "batch",
+      "requested_memory": "",
+      "start": "2026-11-13T11:47:50",
+      "state": "COMPLETED",
+      "time_limit": ""
+    },
+    {
+      "allocated_tres": "cpu=1,mem=256M,node=1",
+      "cpus": "1",
+      "elapsed": "00:00:01",
+      "end": "2026-11-13T11:47:51",
+      "exit_code": "0:0",
+      "job": "7114385_4.extern",
+      "max_rss": "unavailable",
+      "name": "extern",
+      "requested_memory": "",
+      "start": "2026-11-13T11:47:50",
+      "state": "COMPLETED",
+      "time_limit": ""
+    }
+  ]
+}

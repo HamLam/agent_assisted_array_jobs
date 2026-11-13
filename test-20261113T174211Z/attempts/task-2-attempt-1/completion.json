@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/quiet river.txt",
+  "job_id": "7114387",
+  "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/quiet river.txt",
+  "sha256": "21b51ead3435185abdeb8b250ebcdd1ab0595f0b3d825e0ebd5744a54aba0729",
+  "verified_at": "2026-11-13T17:47:42.567766Z"
+}

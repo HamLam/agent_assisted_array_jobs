@@ -1,83 +1,137 @@
-MSI Slurm array workflow instructions
+# MSI Slurm array workflow instructions
 
-Purpose
+## Purpose and scope
 
-Help users process many independent data files through Slurm arrays. Handle job preparation, resource selection, submission, progress checks, and recovery through ordinary Slurm commands.
+Help users process independent files through Slurm arrays: prepare jobs, choose resources, submit, track, validate, and recover failures using ordinary Slurm commands.
 
-The user normally provides:
-- Input data location.
-- Output location.
-- Program or command to run.
+The user supplies the input location, output location, and intended program or analysis. Establish authorized resource, concurrency, and retry ceilings. Proceed within those ceilings without repeated confirmation; ask focused questions only when missing information prevents a reliable decision.
 
-Use the Genesis Slurm skill for general Slurm procedures. Use MSI documentation and current cluster information for site-specific requirements. Preserve input filenames; array numbers are internal references to a saved file list.
+Use the Genesis Slurm skill for general procedures and [MSI documentation](https://userdocs.msi.umn.edu/compute/slurm_job_submission.html) plus current cluster information for site requirements. Locate the installed skill; record its path. Preserve input filenames: array numbers refer to a frozen file list.
 
-Reusable setup
+Work within the authorized run and output locations. Leave unrelated jobs and data alone. Historical test limits are examples, not authorization for another workload.
 
-Maintain a cluster profile containing access details, submission account, available partitions, environment setup, and applicable limits.
+## Repository and run layout
 
-Maintain a profile for each program containing:
-- How to pass one input file and specify its outputs.
-- Required options, software version, modules, or container.
-- Whether it uses multiple CPUs, GPUs, or multiple nodes.
-- What outputs demonstrate success and how to check them.
-- Any proven restart or independently repeatable processing steps.
+- `AGENTS.md`: reusable workflow instructions.
+- `README.md`: project overview and links to completed tests.
+- `test-*/`: archived test runs; their scripts may contain fixed paths, accounts, and job IDs.
+- Each new run needs its own directory and frozen mapping. Never edit an archived run to prepare another run.
 
-Learn these details from documentation, inspection, and trial runs. Ask a focused question only when missing information prevents a reliable decision. A program name alone may not specify the intended analysis.
+Use this layout, or record equivalent paths in the run configuration:
 
-Establish reusable ceilings for resource use, simultaneous tasks, and retries. Once submission and recovery are authorized within those ceilings, proceed without repeatedly requesting confirmation.
+```text
+<run>/
+  run-config.json          # command, validation, resources, limits, record paths
+  cluster-profile.json     # access, account, partitions, environment, limits
+  program-profile.json     # invocation, software, parallelism, checks, recovery
+  manifest.json            # frozen input identities, task IDs, output destinations
+  scripts/                 # batch scripts and processing/validation helpers
+  attempts/                # fresh output, logs, and record for every attempt
+  logs/                    # scheduler stdout/stderr, unique to job and task
+  records/                 # instructions, submissions, accounting, decisions
+  REPORT.md                # per-input outcomes and completion checklist
+```
 
-Prepare each run
+Inputs and final outputs may live at user-specified locations outside this layout. Record their exact paths. Format records as JSON, TSV, or another documented machine-readable format; keep equivalent information if filenames differ.
 
-1. Check that inputs are readable and the output location is writable. Select files using the program’s known input rules. If selection is ambiguous, resolve it before submission.
+## Setup and useful commands
 
-2. Create a unique run record. Freeze the input list and assign each file an internal task number and distinct output destination. Record enough file identity information to detect changed inputs. Never rebuild this mapping during retries.
+Verify required tools, cluster access, file access, software, accounts, partitions, and current limits before submitting. Replace example arguments with values established for the run:
 
-3. Record the exact command, environment, output checks, and intended resource requests. Keep existing results from other runs separate unless their reuse has been verified.
+```bash
+command -v sbatch squeue scontrol sacct sinfo sacctmgr
+hostname
+sinfo -o '%P %a %l %D'
+scontrol show partition <partition>
+sacctmgr -nP show assoc where user="$USER" account=<account>
+sacctmgr -nP show qos where name=<qos>
+scontrol show config
+sbatch --test-only <script> <arguments>
+```
 
-Choose resources
+Use explicit resource requests; a successful request check is not a submitted or completed job. If a command is unavailable or restricted, record the gap and obtain reliable equivalent information before making a dependent decision.
 
-4. Inspect current cluster/account restrictions. Choose a compatible partition and request only resources the program can use. Distinguish independent processes from threads; do not request extra CPUs merely because inputs are numerous.
+After submission, query recorded job IDs, including batch steps for measurements:
 
-5. Use comparable successful runs to estimate memory and runtime. If evidence is insufficient, submit a few representative inputs as pilot tasks, including demanding cases when identifiable.
+```bash
+squeue -r -j <job_ids> -o '%.20i %.12T %.10M %R'
+scontrol show job <job_id>
+sacct -nP -j <job_ids> --format=JobID,State,ExitCode,Elapsed,AllocCPUS,ReqMem,MaxRSS,Start,End
+```
 
-6. Check pilot outputs and measured resource use. Choose bounded margins and group substantially different workloads into separate arrays when useful. Count validated pilot results as completed work.
+Limit changes and cancellations to this run's recorded job IDs. Do not rerun historical submission commands to check status.
 
-7. Respect both total submission limits and simultaneous-running limits. Prefer non-preemptible execution for programs without a proven restart method.
+## Required records
 
-Submit and track
+- **Cluster profile:** observation time, access method, cluster, account, eligible partitions/QoS, environment setup, applicable limits, and documentation or command evidence. Recheck mutable facts before each run.
+- **Program profile:** one-input command and output arguments, options, software/version/modules/container, process/thread/GPU/node use, success checks, and proven restart or independently repeatable stages.
+- **Run configuration:** run ID, instruction snapshot, selected inputs, exact command/environment, output checks, requested resources, authorized ceilings, resource rationale, and paths to all records.
+- **Frozen manifest:** task ID, original input path/name, final destination, size, and a checksum or equivalent identity sufficient to detect changes. Never regenerate the mapping during retries.
+- **Submission record:** unique submission identity, timestamp, exact command, selected tasks/attempts, intent written before submission, returned job IDs, and any uncertainty or reconciliation.
+- **Attempt record:** input/task, attempt number, job IDs, host, command/environment, requested resources, output/log paths, start/end times, program and worker exit status, validation/publication results, scheduler state, measurements, and retry reason when applicable. Record unavailable fields explicitly and attach accounting when it arrives.
+- **Final report:** per-input results, attempts and retry reasons, output verification, accounting/resources, missing measurements, unresolved work, and the completion checklist below.
 
-8. Generate the Slurm script, including environment setup, per-task input selection, resource requests, and separate attempt logs. Use a unique temporary output location for each attempt.
+Keep all attempts, logs, scripts, instruction snapshots, and decisions. Do not silently rewrite earlier evidence when adding later accounting or a retry.
 
-9. Record submission intent before submitting, then save the returned job IDs. If submission outcome is uncertain, reconcile with Slurm before resubmitting. Prevent overlapping attempts for the same input.
+## Prepare each run
 
-10. Check current jobs and completed-job accounting. Waiting, running, and completing tasks are not eligible for retry. If accounting is delayed or unavailable, label the outcome uncertain and investigate.
+1. Confirm the intended analysis and program-specific input rules. Check readable inputs and writable outputs; resolve ambiguous selection before submission.
+2. Create a unique run directory. Freeze input identities, internal task numbers, and distinct output destinations. Quote filenames and paths throughout.
+3. Save exact commands, environment, validation rules, resource requests, and limits. Keep other runs' results separate unless reuse has been verified.
 
-Verify results
+## Choose resources
 
-11. Require both successful program execution and the program-specific output checks. File existence alone is insufficient. Use only outputs and completion messages belonging to the current attempt.
+4. Check cluster/account restrictions and choose a compatible partition. Request only resources the program can use; distinguish independent processes from threads.
+5. Estimate memory and runtime from comparable successful runs. Without sufficient evidence, pilot representative inputs, including demanding cases when identifiable.
+6. Validate pilots and inspect measurements. Use bounded margins, group different workloads when useful, and count validated pilots as completed work.
+7. Respect total submission and simultaneous-running limits across every array and job in this run. Prefer non-preemptible execution without proven safe restart.
 
-12. Publish validated outputs to their final destinations, then record success and write a completion message identifying the input and outputs. A failed output copy or validation remains unresolved.
+## Submit and track
 
-Recover failures
+8. Generate scripts with explicit environment setup, resources, task selection, separate attempt logs, and unique temporary output locations.
+9. Record intent before submission, then save returned IDs. Reconcile uncertain submissions with Slurm before trying again. Prevent overlapping attempts for one input.
+10. Check live jobs and completed-job accounting. Waiting, running, and completing tasks are ineligible for retry. Missing or delayed accounting means an uncertain outcome; investigate before retrying.
 
-13. Diagnose each stopped, unsuccessful task using scheduler information, program logs, and output checks:
-- Memory exhaustion: increase memory within limits.
-- Time limit: increase runtime or select a suitable partition within limits.
-- Temporary infrastructure failure: retry within the attempt limit.
-- Invalid input, command errors, or missing software: resolve the cause before retrying.
+## Validate and publish
 
-14. Preserve verified successes. Retry only unresolved inputs whose previous attempts have stopped. Keep all attempt logs and record why each retry was chosen.
+11. Require successful program execution and program-specific checks of the current attempt. File existence, a zero exit alone, or a completion message is insufficient.
+12. Publish only validated output, verify its final destination, then record success and a completion message identifying the input and outputs. A copy or validation failure stays unresolved.
 
-15. Restart failed computation with fresh output unless a safe recovery method has been demonstrated. Never infer that appending is safe from elapsed time, output size, or a “nearly finished” message.
+## Recover failures
 
-16. Treat validated completed files or independent stages as recovery points. These records do not restore the internal state of a program without checkpoint support.
+13. Diagnose stopped failures using scheduler records, program logs, and output checks:
+    - Memory exhaustion: increase memory within authorized limits.
+    - Time limit: increase runtime or choose a suitable partition within limits.
+    - Temporary infrastructure failure: retry within the attempt limit.
+    - Invalid input, command error, or missing software: fix the cause before retrying.
+14. Preserve verified successes. Retry only unresolved inputs whose previous attempts have stopped; keep logs and record each retry reason.
+15. Use fresh output unless safe recovery has been demonstrated. Elapsed time, output size, or a “nearly finished” message does not prove appending is safe.
+16. Validated files and independent stages can be recovery points. Restoring a program's internal state requires actual checkpoint support.
 
-Report and resume
+## Known gotchas
 
-Keep a durable record of inputs, commands, environments, scripts, resource decisions, job IDs, attempts, output verification, and retry reasons.
+- Spaces in filenames require quoted paths and a manifest parser that preserves complete names.
+- Successful process exit can still produce incomplete output; validation must detect that.
+- Old logs, outputs, or completion messages cannot establish success for a new attempt.
+- A missing live-job entry alone does not establish a completed or retryable job; reconcile accounting.
+- Accounting can lag. Blank memory fields mean unavailable, not zero; batch-step measurements may be available. Distinguish program-only measurements from allocation-wide usage.
+- Array throttles apply per array. Keep the total concurrency within limits when several arrays or verification jobs exist.
+- Queue priority, completion cleanup, and scheduler intervals can delay short jobs. Read current state; do not duplicate submissions to accelerate progress.
+- Site settings, software, and accounts change. Revalidate saved profiles rather than assuming old test settings still apply.
+- Archived scripts can contain absolute paths. Prepare new scripts and manifests without altering original evidence.
 
-When resuming, reconcile that record with Slurm and stored outputs before taking action.
+## Completion and handoff
 
-Report progress using filenames and plain language: waiting, running, verifying, successful, retrying, or needs attention. At completion, state how many inputs succeeded, how many recovered after retry, and what remains unresolved.
+Before declaring the run fully successful, verify and record:
 
-Check progress while active or when invoked. Unattended checking requires an explicitly configured mechanism to wake the agent; do not imply that an inactive chat is monitoring jobs.
+- Every intended input has one validated final result; publications and destinations were checked.
+- Every success has successful execution plus the program-specific validation evidence.
+- No attempts remain waiting, running, completing, or uncertain; scheduler outcomes are reconciled.
+- Only eligible unresolved inputs were retried, within attempt and resource ceilings; verified successes were preserved.
+- Frozen input mappings and required records are intact; all attempt logs and retry reasons are retained.
+- Available accounting supports resource and concurrency claims; unavailable measurements are named explicitly.
+- The report states successful inputs, inputs recovered after retry, and unresolved inputs with reasons.
+
+If work remains unresolved, report that outcome honestly rather than declaring full success. Before resuming, reconcile durable records with Slurm and stored outputs.
+
+Use filenames and plain-language states: waiting, running, verifying, successful, retrying, or needs attention. Check progress while active or when invoked. Unattended checking requires an explicitly configured wake-up mechanism; an inactive chat is not monitoring jobs.

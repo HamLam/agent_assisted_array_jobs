@@ -1,0 +1,18 @@
+{
+  "attempt_records": 8,
+  "issues": [],
+  "observed_at": "2026-11-13T17:55:43.009154Z",
+  "passed": true,
+  "root_records": [
+    "run-config.json",
+    "cluster-profile.json",
+    "program-profile.json",
+    "manifest.json",
+    "records/AGENTS.md",
+    "records/AGENTS.before.md",
+    "records/first-wave-review.json",
+    "records/retry-plan.json",
+    "records/request-check.json"
+  ],
+  "submission_records": 3
+}

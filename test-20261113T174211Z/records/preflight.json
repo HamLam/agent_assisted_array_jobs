@@ -1,0 +1,99 @@
+{
+  "compatible_with_authorized_ceilings": true,
+  "evidence": {
+    "account": {
+      "command": [
+        "sacctmgr",
+        "-nP",
+        "show",
+        "assoc",
+        "where",
+        "user=lamx0031",
+        "account=support"
+      ],
+      "exit": 0,
+      "stderr": "records/account.stderr",
+      "stdout": "records/account.stdout"
+    },
+    "cluster-config": {
+      "command": [
+        "scontrol",
+        "show",
+        "config"
+      ],
+      "exit": 0,
+      "stderr": "records/cluster-config.stderr",
+      "stdout": "records/cluster-config.stdout"
+    },
+    "partition": {
+      "command": [
+        "scontrol",
+        "show",
+        "partition",
+        "msismall"
+      ],
+      "exit": 0,
+      "stderr": "records/partition.stderr",
+      "stdout": "records/partition.stdout"
+    },
+    "preexisting-jobs": {
+      "command": [
+        "squeue",
+        "--me",
+        "-h",
+        "-o",
+        "%i|%T"
+      ],
+      "exit": 0,
+      "stderr": "records/preexisting-jobs.stderr",
+      "stdout": "records/preexisting-jobs.stdout"
+    },
+    "python-version": {
+      "command": [
+        "/usr/bin/python3",
+        "--version"
+      ],
+      "exit": 0,
+      "stderr": "records/python-version.stderr",
+      "stdout": "records/python-version.stdout"
+    },
+    "qos": {
+      "command": [
+        "sacctmgr",
+        "-nP",
+        "show",
+        "qos",
+        "where",
+        "name=normal,common_agate"
+      ],
+      "exit": 0,
+      "stderr": "records/qos.stderr",
+      "stdout": "records/qos.stdout"
+    },
+    "time-version": {
+      "command": [
+        "/usr/bin/time",
+        "--version"
+      ],
+      "exit": 0,
+      "stderr": "records/time-version.stderr",
+      "stdout": "records/time-version.stdout"
+    },
+    "tr-version": {
+      "command": [
+        "/usr/bin/tr",
+        "--version"
+      ],
+      "exit": 0,
+      "stderr": "records/tr-version.stderr",
+      "stdout": "records/tr-version.stdout"
+    }
+  },
+  "existing_scheduler_entries": 0,
+  "input_count": 6,
+  "inputs_readable": true,
+  "observed_at": "2026-11-13T17:44:16.539927Z",
+  "original_program_unchanged": true,
+  "outputs_writable": true,
+  "source_documentation": "https://userdocs.msi.umn.edu/compute/slurm_job_submission.html"
+}

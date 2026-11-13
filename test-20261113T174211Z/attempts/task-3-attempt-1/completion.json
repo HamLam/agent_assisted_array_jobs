@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/quartz-note.txt",
+  "job_id": "7114388",
+  "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/quartz-note.txt",
+  "sha256": "f2bd2a9f381e4cf20f416a19325ff7e69ef847102d08bcccf1d77acdbc1994a2",
+  "verified_at": "2026-11-13T17:47:51.216558Z"
+}

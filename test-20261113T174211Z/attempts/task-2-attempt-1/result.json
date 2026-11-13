@@ -1,0 +1,73 @@
+{
+  "actual_bytes": 39,
+  "array_job_id": "7114385",
+  "attempt": 1,
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-2-attempt-1/time.txt",
+    "/usr/bin/python3",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/uppercase.py",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/quiet river.txt",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-2-attempt-1/quiet river.txt",
+    "--mode",
+    "normal",
+    "--attempt",
+    "1"
+  ],
+  "ended": "2026-11-13T17:47:42.581972Z",
+  "environment": {
+    "LC_ALL": "C",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "SLURM_ARRAY_JOB_ID": "7114385",
+    "SLURM_ARRAY_TASK_ID": "2",
+    "SLURM_CPUS_PER_TASK": "1",
+    "SLURM_JOB_ACCOUNT": "support",
+    "SLURM_JOB_ID": "7114387",
+    "SLURM_JOB_PARTITION": "msismall",
+    "SLURM_JOB_QOS": "normal",
+    "SLURM_MEM_PER_NODE": "256"
+  },
+  "expected_bytes": 39,
+  "final_output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/quiet river.txt",
+  "host": "acn01",
+  "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/quiet river.txt",
+  "job_id": "7114387",
+  "logs": {
+    "measurements": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-2-attempt-1/time.txt",
+    "stderr": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-2-attempt-1/program.stderr",
+    "stdout": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-2-attempt-1/program.stdout"
+  },
+  "measurements": {
+    "allocation_maxrss": "unavailable until accounting reconciliation",
+    "program_gnu_time": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-2-attempt-1/time.txt"
+  },
+  "name": "quiet river.txt",
+  "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-2-attempt-1/quiet river.txt",
+  "output_sha256": "21b51ead3435185abdeb8b250ebcdd1ab0595f0b3d825e0ebd5744a54aba0729",
+  "program_exit": 0,
+  "publication": "verified",
+  "python": "3.6.8 (default, Oct 20 2026, 13:03:29) \n[GCC 8.5.0 20210514 (Red Hat 8.5.0-29)]",
+  "reason": "successful execution, validation, and publication",
+  "resources": {
+    "cpus": 1,
+    "gpus": 0,
+    "memory_mib": 256,
+    "nodes": 1,
+    "time_seconds": 300
+  },
+  "retry_reason": "not a retry",
+  "scheduler_state": "unavailable until accounting reconciliation",
+  "started": "2026-11-13T17:47:42.407840Z",
+  "status": "successful",
+  "task": 2,
+  "validation": {
+    "attempt_exact_match": true,
+    "final_exact_match": true,
+    "method": "exact byte comparison against independent LC_ALL=C tr a-z A-Z"
+  },
+  "worker_exit": 0
+}

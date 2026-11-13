@@ -1,0 +1,67 @@
+{
+  "array_job_id": "7114385",
+  "attempt": 1,
+  "command": [
+    "/usr/bin/time",
+    "-v",
+    "-o",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-1-attempt-1/time.txt",
+    "/usr/bin/python3",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/uppercase.py",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/cedar.txt",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-1-attempt-1/cedar.txt",
+    "--mode",
+    "normal",
+    "--attempt",
+    "1"
+  ],
+  "environment": {
+    "LC_ALL": "C",
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "SLURM_ARRAY_JOB_ID": "7114385",
+    "SLURM_ARRAY_TASK_ID": "1",
+    "SLURM_CPUS_PER_TASK": "1",
+    "SLURM_JOB_ACCOUNT": "support",
+    "SLURM_JOB_ID": "7114386",
+    "SLURM_JOB_PARTITION": "msismall",
+    "SLURM_JOB_QOS": "normal",
+    "SLURM_MEM_PER_NODE": "256"
+  },
+  "final_output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/cedar.txt",
+  "host": "acn01",
+  "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/cedar.txt",
+  "job_id": "7114386",
+  "logs": {
+    "measurements": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-1-attempt-1/time.txt",
+    "stderr": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-1-attempt-1/program.stderr",
+    "stdout": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-1-attempt-1/program.stdout"
+  },
+  "measurements": {
+    "allocation_maxrss": "unavailable until accounting reconciliation",
+    "program_gnu_time": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-1-attempt-1/time.txt"
+  },
+  "name": "cedar.txt",
+  "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/attempts/task-1-attempt-1/cedar.txt",
+  "program_exit": "unavailable",
+  "publication": "not attempted",
+  "python": "3.6.8 (default, Oct 20 2026, 13:03:29) \n[GCC 8.5.0 20210514 (Red Hat 8.5.0-29)]",
+  "resources": {
+    "cpus": 1,
+    "gpus": 0,
+    "memory_mib": 256,
+    "nodes": 1,
+    "time_seconds": 300
+  },
+  "retry_reason": "not a retry",
+  "scheduler_state": "unavailable until accounting reconciliation",
+  "started": "2026-11-13T17:47:42.403016Z",
+  "status": "running",
+  "task": 1,
+  "validation": {
+    "attempt_exact_match": false,
+    "final_exact_match": false
+  },
+  "worker_exit": "unavailable"
+}

@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-11-13T17:49:26.123092Z",
+  "limits": {
+    "cpus_per_attempt": 1,
+    "gpus": 0,
+    "max_retries_per_input": 1,
+    "max_running": 2,
+    "memory_mib_per_attempt": 1024,
+    "time_seconds_per_attempt": 300
+  },
+  "tasks": [
+    {
+      "accounting": {
+        "allocated_tres": "cpu=1,mem=256M,node=1",
+        "cpus": "1",
+        "elapsed": "00:00:01",
+        "end": "2026-11-13T11:47:54",
+        "exit_code": "23:0",
+        "job": "7114385_5",
+        "max_rss": "unavailable",
+        "name": "upper-20261113T174211Z-initial",
+        "requested_memory": "256M",
+        "start": "2026-11-13T11:47:53",
+        "state": "FAILED",
+        "time_limit": "00:05:00"
+      },
+      "decision": "one retry with fresh output; unchanged resources",
+      "name": "broken-compass.txt",
+      "previous_job": "7114385_5",
+      "reason": "program exited 23 after deliberate partial output",
+      "task": 5
+    },
+    {
+      "accounting": {
+        "allocated_tres": "cpu=1,mem=256M,node=1",
+        "cpus": "1",
+        "elapsed": "00:00:01",
+        "end": "2026-11-13T11:47:54",
+        "exit_code": "86:0",
+        "job": "7114385_6",
+        "max_rss": "unavailable",
+        "name": "upper-20261113T174211Z-initial",
+        "requested_memory": "256M",
+        "start": "2026-11-13T11:47:53",
+        "state": "FAILED",
+        "time_limit": "00:05:00"
+      },
+      "decision": "one retry with fresh output; unchanged resources",
+      "name": "short-lantern.txt",
+      "previous_job": "7114385_6",
+      "reason": "program exit 0 but exact byte comparison rejected incomplete output",
+      "task": 6
+    }
+  ]
+}

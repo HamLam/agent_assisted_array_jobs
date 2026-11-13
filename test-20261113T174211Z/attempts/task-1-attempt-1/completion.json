@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/cedar.txt",
+  "job_id": "7114386",
+  "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/cedar.txt",
+  "sha256": "dc53029aa71c24ed9d58083c29761b742753bc356f14b53b9255df61b4680cbf",
+  "verified_at": "2026-11-13T17:47:42.518146Z"
+}

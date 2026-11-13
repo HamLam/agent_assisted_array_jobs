@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "all_jobs_stopped_and_reconciled": true,
+    "all_six_final_outputs_validated": true,
+    "execution_and_validation_evidence": true,
+    "final_slurm_audit_successful": true,
+    "frozen_records_intact": true,
+    "measurement_gaps_explicitly_recorded": true,
+    "original_test_unchanged": true,
+    "required_records_complete": true,
+    "resources_and_total_concurrency_within_limits": true,
+    "selective_retries_and_successes_preserved": true
+  },
+  "github_pushed": false,
+  "maximum_total_concurrency": 2,
+  "measurement_gaps": {
+    "allocation_maxrss_blank": [
+      "7114385_1",
+      "7114385_2",
+      "7114385_3",
+      "7114385_4",
+      "7114385_5",
+      "7114385_6",
+      "7114518_5",
+      "7114518_6",
+      "7115125"
+    ],
+    "batch_step_maxrss": {
+      "7114385_1.batch": "13404K",
+      "7114385_2.batch": "13396K",
+      "7114385_3.batch": "13236K",
+      "7114385_4.batch": "13320K",
+      "7114385_5.batch": "13416K",
+      "7114385_6.batch": "13260K",
+      "7114518_5.batch": "13284K",
+      "7114518_6.batch": "13444K",
+      "7115125.batch": "10764K"
+    }
+  },
+  "observed_at": "2026-11-13T17:55:43.014985Z",
+  "passed": true,
+  "processing_attempts": 8,
+  "recovered_after_retry": 2,
+  "successful_inputs": 6,
+  "unresolved": 0,
+  "verification_jobs": 1
+}

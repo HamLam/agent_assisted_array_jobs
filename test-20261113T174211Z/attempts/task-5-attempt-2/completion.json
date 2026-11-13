@@ -1,0 +1,8 @@
+{
+  "attempt": 2,
+  "input": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/inputs/broken-compass.txt",
+  "job_id": "7114603",
+  "output": "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/broken-compass.txt",
+  "sha256": "d29a7952579528a519b58ba4b40fb181316a2b0980e34b4f19af2885c22c3f62",
+  "verified_at": "2026-11-13T17:51:29.571583Z"
+}

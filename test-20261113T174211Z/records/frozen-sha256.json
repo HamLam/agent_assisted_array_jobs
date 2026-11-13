@@ -1,0 +1,14 @@
+{
+  "manifest.json": "e868820795960ff08982c03ec3e31fab87d2eaaa2c22b65108e8c29913337ba8",
+  "run-config.json": "8926d0790ca3f24f0c43c3a05b7def940c43e6eb662d165d19b5f124886e875b",
+  "cluster-profile.json": "d73f2d2d3638c7adc5ec390baacf664743d9474dfced68cbda4d23a853a87841",
+  "program-profile.json": "a025d141bfc829276c1ee0affc3d249cbe8e5ccb2fab500899bf184fc51b33cf",
+  "records/AGENTS.md": "7642e83c8650db27b2e021b3ca3fa86ab72ec50a7f0b7fd18ede7bcd2f219604",
+  "scripts/audit.py": "8b80d80a5942d3b7b180ae371956d514629b88fb153b6555b3f309c969ac63b7",
+  "scripts/common.py": "e45f90d97df5576dce913b97bbdb82c5b7be18f52602c21a1de3912ec9bf2950",
+  "scripts/job.sbatch": "d5b42ce71c722968dcbe07042e480e84af05e24453ee6d1463f612d935dd53ca",
+  "scripts/reconcile.py": "6e268b5fca4ecd96f601791ca8a789a65d4458158696f08fd91a5900b5bf3dab",
+  "scripts/submit.py": "94841a2376d96fb22dc6a9c8deeb957bce1b4c2761c5b5f25b00efc4c475e24f",
+  "scripts/uppercase.py": "e69da56c53ad58147d70a280efc1ecb5f36b5f40ede9ae56391a3e7348f84f75",
+  "scripts/worker.py": "e34e47362856d895689f9dce5c95986438c3ca90e0d416464378d348c5df84f9"
+}

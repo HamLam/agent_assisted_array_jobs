@@ -25,7 +25,7 @@ The user chooses the analysis and authorizes its limits. Unattended monitoring n
 
 ## How AGENTS.md guides a run
 
-[`AGENTS.md`](AGENTS.md) gives the agent reusable rules for managing Slurm arrays:
+[`AGENTS.md`](AGENTS.md) gives the agent reusable rules for managing Slurm arrays, with setup/status commands, required records, known gotchas, and a completion checklist:
 
 - Get the input location, output location, and intended program from the user.
 - Use the Genesis Slurm skill, MSI documentation, and current cluster information.
@@ -47,8 +47,10 @@ The user chooses the analysis and authorizes its limits. Unattended monitoring n
 
 [`prompt.txt`](test-20261112T221451Z/prompt.txt) defines the six-file test, deliberate failures, exact-output checks, and authorized test limits.
 
-## Completed test
+## Completed tests
 
 The [six-input text-file test](test-20261112T221451Z/README.md) demonstrates this workflow on MSI's `agate` cluster. It includes a filename containing spaces, a deliberate partial-output failure, and deliberately incomplete output from a program that exits successfully. All six final outputs passed exact comparison; two inputs recovered after one retry each.
 
 The test folder contains its step-by-step summary, scripts, inputs, expected and final outputs, failed-attempt evidence, logs, resource profiles, and [final accounting report](test-20261112T221451Z/REPORT.md). These are archived artifacts from that run; applying the workflow to another program requires its own environment, validation rules, resource estimates, and recovery method.
+
+The [revised-instructions rerun](test-20261113T174211Z/README.md) used the same six inputs and unchanged failure-injection program in a new directory. All six outputs passed, only the two deliberate failures needed retries, and a separate Slurm audit verified the required records, resource limits, and all 117 original test files. Its [report and completion checklist](test-20261113T174211Z/REPORT.md) document the results.

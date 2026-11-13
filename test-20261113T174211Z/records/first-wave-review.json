@@ -1,0 +1,75 @@
+{
+  "observed_at": "2026-11-13T17:49:25.597943Z",
+  "results": [
+    {
+      "attempt_exact_match": true,
+      "name": "cedar.txt",
+      "program_exit": 0,
+      "reason": "successful execution, validation, and publication",
+      "status": "successful",
+      "task": 1,
+      "worker_exit": 0
+    },
+    {
+      "attempt_exact_match": true,
+      "name": "quiet river.txt",
+      "program_exit": 0,
+      "reason": "successful execution, validation, and publication",
+      "status": "successful",
+      "task": 2,
+      "worker_exit": 0
+    },
+    {
+      "attempt_exact_match": true,
+      "name": "quartz-note.txt",
+      "program_exit": 0,
+      "reason": "successful execution, validation, and publication",
+      "status": "successful",
+      "task": 3,
+      "worker_exit": 0
+    },
+    {
+      "attempt_exact_match": true,
+      "name": "violet.txt",
+      "program_exit": 0,
+      "reason": "successful execution, validation, and publication",
+      "status": "successful",
+      "task": 4,
+      "worker_exit": 0
+    },
+    {
+      "attempt_exact_match": false,
+      "name": "broken-compass.txt",
+      "program_exit": 23,
+      "reason": "program exited 23 after deliberate partial output",
+      "status": "needs attention",
+      "task": 5,
+      "worker_exit": 23
+    },
+    {
+      "attempt_exact_match": false,
+      "name": "short-lantern.txt",
+      "program_exit": 0,
+      "reason": "program exit 0 but exact byte comparison rejected incomplete output",
+      "status": "needs attention",
+      "task": 6,
+      "worker_exit": 86
+    }
+  ],
+  "successful_output_sha256": {
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/cedar.txt": "dc53029aa71c24ed9d58083c29761b742753bc356f14b53b9255df61b4680cbf",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/quartz-note.txt": "f2bd2a9f381e4cf20f416a19325ff7e69ef847102d08bcccf1d77acdbc1994a2",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/quiet river.txt": "21b51ead3435185abdeb8b250ebcdd1ab0595f0b3d825e0ebd5744a54aba0729",
+    "/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/outputs/violet.txt": "f45b80e6876aa0736152ce7da96d47948106ec2d784cb5d14b33d2f0ffa1284a"
+  },
+  "successful_tasks": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "unpublished_failed_tasks": [
+    5,
+    6
+  ]
+}

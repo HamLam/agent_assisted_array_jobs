@@ -1,0 +1,31 @@
+Read AGENTS.md and use the Genesis Slurm skill.
+
+Test this workflow on my Slurm cluster using disposable data. Use MSI’s documentation for cluster-specific rules:
+https://userdocs.msi.umn.edu/compute/slurm_job_submission.html
+
+First verify cluster access and applicable submission requirements.
+
+Create a self-contained test inside a dedicated cluster directory. Create six small text input files with arbitrary names, including one containing spaces. Create a tiny test program that reads one input and writes its text in uppercase to the specified output.
+
+Include these controlled cases:
+- Four inputs complete normally.
+- One input writes partial output and deliberately fails on its first attempt, then succeeds on retry.
+- One input exits successfully but deliberately produces an incomplete result on its first attempt, then succeeds on retry.
+
+Keep the deliberate failures in the test program. Do not remove or bypass them to make the test pass.
+
+Use exact comparison with independently calculated uppercase text to verify every final output. File existence and a completion message are insufficient.
+
+You may submit this test and recover its failures within these limits:
+- At most two tasks running simultaneously.
+- One CPU, at most 1 GiB memory, and five minutes per task attempt.
+- At most one retry per input.
+- No GPUs.
+- All computation through Slurm.
+- Work only within this test directory; leave my other jobs and data alone.
+
+If cluster requirements make these limits incompatible, explain the specific issue before submitting.
+
+Generate the script and frozen input list, submit, check results, and retry eligible failed inputs. Preserve each attempt’s logs and resource requests.
+
+Finish with evidence showing which inputs ran, which were retried, why they were retried, and whether each final output exactly matches its expected contents. Report any missing resource measurements honestly.

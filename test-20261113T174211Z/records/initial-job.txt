@@ -1,0 +1,174 @@
+JobId=7114385 ArrayJobId=7114385 ArrayTaskId=6 ArrayTaskThrottle=2 JobName=upper-20261113T174211Z-initial
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=127202 Nice=0 Account=support QOS=normal
+   JobState=FAILED Reason=NonZeroExitCode Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=86:0
+   RunTime=00:00:01 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-13T11:47:39 EligibleTime=2026-11-13T11:47:41
+   AccrueTime=2026-11-13T11:47:41
+   StartTime=2026-11-13T11:47:53 EndTime=2026-11-13T11:47:54 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T11:47:53 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:1202861
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch
+   SubmitLine=sbatch --parsable --chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z --job-name=upper-20261113T174211Z-initial --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.err --array=1,2,3,4,5,6%2 /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_6.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_6.out
+   TresPerTask=cpu=1
+
+JobId=7114390 ArrayJobId=7114385 ArrayTaskId=5 ArrayTaskThrottle=2 JobName=upper-20261113T174211Z-initial
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=127202 Nice=0 Account=support QOS=normal
+   JobState=FAILED Reason=NonZeroExitCode Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=23:0
+   RunTime=00:00:01 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-13T11:47:39 EligibleTime=2026-11-13T11:47:53
+   AccrueTime=2026-11-13T11:47:41
+   StartTime=2026-11-13T11:47:53 EndTime=2026-11-13T11:47:54 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T11:47:53 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:1202861
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch
+   SubmitLine=sbatch --parsable --chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z --job-name=upper-20261113T174211Z-initial --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.err --array=1,2,3,4,5,6%2 /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_5.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_5.out
+   TresPerTask=cpu=1
+
+JobId=7114389 ArrayJobId=7114385 ArrayTaskId=4 ArrayTaskThrottle=2 JobName=upper-20261113T174211Z-initial
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=127202 Nice=0 Account=support QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-13T11:47:39 EligibleTime=2026-11-13T11:47:41
+   AccrueTime=2026-11-13T11:47:41
+   StartTime=2026-11-13T11:47:50 EndTime=2026-11-13T11:47:51 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T11:47:50 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:1202861
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch
+   SubmitLine=sbatch --parsable --chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z --job-name=upper-20261113T174211Z-initial --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.err --array=1,2,3,4,5,6%2 /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_4.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_4.out
+   TresPerTask=cpu=1
+
+JobId=7114388 ArrayJobId=7114385 ArrayTaskId=3 ArrayTaskThrottle=2 JobName=upper-20261113T174211Z-initial
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=127202 Nice=0 Account=support QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-13T11:47:39 EligibleTime=2026-11-13T11:47:44
+   AccrueTime=2026-11-13T11:47:41
+   StartTime=2026-11-13T11:47:50 EndTime=2026-11-13T11:47:51 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T11:47:50 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:1202861
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch
+   SubmitLine=sbatch --parsable --chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z --job-name=upper-20261113T174211Z-initial --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.err --array=1,2,3,4,5,6%2 /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_3.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_3.out
+   TresPerTask=cpu=1
+
+JobId=7114387 ArrayJobId=7114385 ArrayTaskId=2 ArrayTaskThrottle=2 JobName=upper-20261113T174211Z-initial
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=127202 Nice=0 Account=support QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-13T11:47:39 EligibleTime=2026-11-13T11:47:41
+   AccrueTime=2026-11-13T11:47:41
+   StartTime=2026-11-13T11:47:41 EndTime=2026-11-13T11:47:42 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T11:47:41 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:1202861
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch
+   SubmitLine=sbatch --parsable --chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z --job-name=upper-20261113T174211Z-initial --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.err --array=1,2,3,4,5,6%2 /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_2.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_2.out
+   TresPerTask=cpu=1
+
+JobId=7114386 ArrayJobId=7114385 ArrayTaskId=1 ArrayTaskThrottle=2 JobName=upper-20261113T174211Z-initial
+   UserId=lamx0031(70279) GroupId=support(10100) MCS_label=N/A
+   Priority=127202 Nice=0 Account=support QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:01 TimeLimit=00:05:00 TimeMin=N/A
+   SubmitTime=2026-11-13T11:47:39 EligibleTime=2026-11-13T11:47:41
+   AccrueTime=2026-11-13T11:47:41
+   StartTime=2026-11-13T11:47:41 EndTime=2026-11-13T11:47:42 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-13T11:47:41 Scheduler=Main
+   Partition=msismall AllocNode:Sid=cn1002:1202861
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=acn01
+   BatchHost=acn01
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=256M,node=1
+   AllocTRES=cpu=1,mem=256M,node=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=256M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NO Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch
+   SubmitLine=sbatch --parsable --chdir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z --job-name=upper-20261113T174211Z-initial --output=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.out --error=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-%A_%a.err --array=1,2,3,4,5,6%2 /projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/scripts/job.sbatch 1
+   WorkDir=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z
+   StdErr=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_1.err
+   StdIn=/dev/null
+   StdOut=/projects/standard/support/shared/lamx0031/Codex/slurm_agent/test-20261113T174211Z/logs/initial-7114385_1.out
+   TresPerTask=cpu=1
+

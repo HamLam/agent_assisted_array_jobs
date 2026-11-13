@@ -1,0 +1,20 @@
+{
+  "command_template": [
+    "/usr/bin/python3",
+    "scripts/uppercase.py",
+    "INPUT",
+    "ATTEMPT_OUTPUT",
+    "--mode",
+    "MODE",
+    "--attempt",
+    "ATTEMPT"
+  ],
+  "name": "uppercase test",
+  "parallelism": "one serial process; one CPU; no GPUs, MPI, extra threads, modules, or containers",
+  "recovery": "Fresh output on retry; no append or checkpoint; deliberate first-attempt failures retained",
+  "script": "scripts/uppercase.py",
+  "software": "/usr/bin/python3 3.6.8",
+  "success": "Validated final output and per-attempt completion.json; file existence or completion text alone never sufficient",
+  "validation": "Independent LC_ALL=C /usr/bin/tr a-z A-Z; program exit 0 and exact entire byte equality before and after publication",
+  "version_sha256": "e69da56c53ad58147d70a280efc1ecb5f36b5f40ede9ae56391a3e7348f84f75"
+}
