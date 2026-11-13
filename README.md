@@ -45,7 +45,7 @@ The user chooses the analysis and authorizes its limits. Unattended monitoring n
 - Reconcile records with Slurm and outputs before resuming. Report progress, final counts, and unresolved work.
 - Check progress while active or when invoked; configure a wake-up mechanism for unattended checks.
 
-[`prompt.txt`](prompt.txt) defines the six-file test, deliberate failures, exact-output checks, and authorized test limits.
+[`prompt.txt`](test-20261112T221451Z/prompt.txt) defines the six-file test, deliberate failures, exact-output checks, and authorized test limits.
 
 ## Completed test
 
